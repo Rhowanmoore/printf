@@ -50,16 +50,3 @@ int _printf(const char *format, ...)
 
 	return (len);
 }
-
-/* Main function just for preliminary testing purposes*/
-int main(void)
-{
-	int x, y;
-	char a = 'M';
-	char b[] = "Michael";
-
-	x = _printf("Hello, %c, %s\n", a, b);
-	y = printf("Hello, %c, %s\n",a, b);
-	printf("%d, %d\n", x, y);
-	return (0);
-}
