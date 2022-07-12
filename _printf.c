@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			ptr++;
 			if (*ptr == 'c')
 			{
-				_putchar(va_arg(arg_list, int));
+				putchar(va_arg(arg_list, int));
 				len++;
 			}
 			else if (*ptr == 's')
@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 				str = va_arg(arg_list, char *);
 				while (*str != '\0')
 				{
-					_putchar(*str);
+					putchar(*str);
 					str++;
 					len++;
 				}
@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(*ptr);
+			putchar(*ptr);
 			len++;
 		}
 	}
