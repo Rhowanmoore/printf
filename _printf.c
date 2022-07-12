@@ -14,11 +14,17 @@ int _printf(const char *format, ...)
 	unsigned int len = 0;
 	va_list arg_list;
 	const char *ptr, *str;
-	/*	conv_type func[] = {
-	 	{'%': print_conv_spfr},
-	}*/
+	/* 	
+	   	conv_type func[] = {
+		{'%': print_conv_spfr},
+	}
+	*/
 
 	va_start(arg_list, format);
+	if(!format || (format[0]=='%'&&!format[1]))
+		return (-1);
+	if(format[0]=='%'&&format[1]==''&&!format[2])
+		return(-1);
 	for (ptr = format; *ptr != '\0'; ptr++)
 	{
 		if (*ptr == '%')
